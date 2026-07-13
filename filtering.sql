@@ -1,9 +1,11 @@
-SELECT FirstName, LastName, Country
-FROM Customers 
-WHERE Country ='USA' AND 
-State = 'CA';
+.headers on
+.mode table
+.width auto
 
+SELECT FirstName, LastName, Country, State
+FROM Customers
+WHERE Country = 'USA' AND State = 'CA';
 
-/*SELECT Name, UnitPrice 
+SELECT Name, Composer, Milliseconds
 FROM Tracks
-WHERE UnitPrice > 1.99;*/
+WHERE Composer IS NOT NULL AND Milliseconds >= 300000;
