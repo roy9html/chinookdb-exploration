@@ -80,3 +80,10 @@ Examples from the Chinook database
  ArtistId
  AlbumId
 TrackId
+# References
+
+GeeksforGeeks – Keys in Relational Model
+
+Baeldung – Different Types of Keys in SQL
+
+SQLite Tutorial – Chinook Sample Database
