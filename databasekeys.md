@@ -87,3 +87,27 @@ GeeksforGeeks – Keys in Relational Model
 Baeldung – Different Types of Keys in SQL
 
 SQLite Tutorial – Chinook Sample Database
+
+# Chinook Database Keys – Simplified Reference
+
+This document provides a quick-reference table of all **Primary Keys** and **Foreign Keys** found inside the `chinook.db` sample database.
+
+---
+
+## Database Keys Reference Table
+
+| Table Name | Primary Key(s) | Foreign Key(s) |
+| :--- | :--- | :--- |
+| **`artists`** | `ArtistId` | None |
+| **`albums`** | `AlbumId` | `ArtistId` → `artists.ArtistId` |
+| **`tracks`** | `TrackId` | `AlbumId` → `albums.AlbumId` <br> `MediaTypeId` → `media_types.MediaTypeId` <br> `GenreId` → `genres.GenreId` |
+| **`media_types`** | `MediaTypeId` | None |
+| **`genres`** | `GenreId` | None |
+| **`playlists`** | `PlaylistId` | None |
+| **`playlist_track`** | **Composite:** `PlaylistId` + `TrackId` | `PlaylistId` → `playlists.PlaylistId` <br> `TrackId` → `tracks.TrackId` |
+| **`customers`** | `CustomerId` | `SupportRepId` → `employees.EmployeeId` |
+| **`employees`** | `EmployeeId` | `ReportsTo` → `employees.EmployeeId` *(Self-Reference)* |
+| **`invoices`** | `InvoiceId` | `CustomerId` → `customers.CustomerId` |
+| **`invoice_items`** | `InvoiceLineId` | `InvoiceId` → `invoices.InvoiceId` <br> `TrackId` → `tracks.TrackId` |
+
+---
